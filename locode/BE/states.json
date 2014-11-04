@@ -1,13 +1,15 @@
 {
-    "Antwerpen": "WHT", 
-    "Brabant wallon": "WLG", 
+    "Antwerpen": "VAN", 
+    "Brabant wallon": "WBR", 
     "Bruxelles-Capitale, R\u00e9gion de": "BRU", 
-    "Hainaut": "VLI", 
-    "Limburg": "WNA", 
-    "Li\u00e8ge": "WLX", 
-    "Luxembourg": "VBR", 
-    "Namur": "VWV", 
-    "Vlaamse Gewest": "WAL", 
-    "nl": "VOV", 
-    "wallonne, R\u00e9gion": "WBR"
+    "Hainaut": "WHT", 
+    "Limburg": "VLI", 
+    "Li\u00e8ge": "WLG", 
+    "Luxembourg": "WLX", 
+    "Namur": "WNA", 
+    "Oost-Vlaanderen": "VOV", 
+    "Vlaams-Brabant": "VBR", 
+    "Vlaamse Gewest": "VLG", 
+    "West-Vlaanderen": "VWV", 
+    "wallonne, R\u00e9gion": "WAL"
 }

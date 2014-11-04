@@ -28,6 +28,7 @@ class TestMissing(unittest.TestCase):
 
             list_dir = [x.split('.')[0] for x in os.listdir(country_folder)
                     if not any(y in x for y in ('__init__.py', 'states.json'))]
+            print sorted(data.values()), sorted(list_dir)
             self.assertListEqual(sorted(data.values()), sorted(list_dir),
                     msg=country_folder)
 
