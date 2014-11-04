@@ -1,21 +1,16 @@
-======
-Locode
-======
+# Locode
 
-Overview
-========
+## Overview
 
 This module contains a series of json files with ISO_3166-1, ISO_3166-2 and 
 city codes from http://www.unece.org/cefact/locode/service/location.html
 
-bdist_egg
-========
+## bdist_egg
 
 `python setup.py bdist_egg` supports `--country=<country_code>` for creation 
 of light weight eggs.
 
-Usage
-=====
+## Usage
 
 ```python
 >>> import locode
