@@ -1,0 +1,10 @@
+{
+    "Central": "200", 
+    "Coast": "300", 
+    "Eastern": "400", 
+    "Nairobi": "110", 
+    "North-Eastern": "500", 
+    "Nyanza": "600", 
+    "Rift Valley": "700", 
+    "Western": "800"
+}
