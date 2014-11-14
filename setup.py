@@ -23,7 +23,7 @@ setup_kwargs = {
         }
 
 
-if not sys.argv[1:]:
+if not any('--country' in x for x in sys.argv):
     setup_kwargs['package_data'] = {'': ['*.json']}
 else:
     setup_kwargs['package_data'] = {}
@@ -31,8 +31,5 @@ else:
         if '--country' in country:
             country = country.replace('--country=', '')
             setup_kwargs['package_data'][country] = [os.path.join(country, '*.json')]
-
-print setup_kwargs['package_data']
-#raise Exception
 
 setup(**setup_kwargs)
