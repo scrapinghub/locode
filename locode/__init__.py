@@ -40,7 +40,7 @@ def get_country_code(text):
     return _get_code(os.path.join(_BASE_PATH, 'countries.json'), text)
 
 
-_re_state_code = re.compile(r'^[A-Z]{2}$')
+_re_state_code = re.compile(r'^[A-Z0-9]{2}$')
 def get_state_code(text, country):
     if not text:
         return NOT_FOUND
