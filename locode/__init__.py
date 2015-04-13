@@ -6,14 +6,18 @@ import os
 _BASE_PATH = os.path.dirname(__file__)
 NOT_FOUND = u'XX'
 
-
-def _get_code(filename, text):
+def _get_dict(filename):
     try:
         with open(filename) as f:
             data = json.load(f)
+            return data
     except IOError:
-        return NOT_FOUND
+        return None
 
+def _get_code(filename, text):
+    data = _get_dict(filename)
+    if data is None:
+        return NOT_FOUND
     value = data.get(text)
     if value:
         return value
@@ -64,13 +68,7 @@ def get_city_code(text, state, country):
         return NOT_FOUND
     return _get_code(os.path.join(_BASE_PATH, country_code, state_code + '.json'), text)
 
-def _get_dict(filename):
-    try:
-        with open(filename) as f:
-            data = json.load(f)
-            return data
-    except IOError:
-        return NOT_FOUND
+
 
 def get_countries():
     return _get_dict(os.path.join(_BASE_PATH, 'countries.json'))
