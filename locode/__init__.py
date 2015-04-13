@@ -63,3 +63,31 @@ def get_city_code(text, state, country):
     if any(NOT_FOUND == x for x in (country_code, state_code)):
         return NOT_FOUND
     return _get_code(os.path.join(_BASE_PATH, country_code, state_code + '.json'), text)
+
+def _get_dict(filename):
+    try:
+        with open(filename) as f:
+            data = json.load(f)
+            return data
+    except IOError:
+        return NOT_FOUND
+
+def get_countries():
+    return _get_dict(os.path.join(_BASE_PATH, 'countries.json'))
+
+def get_states(country):
+    country_code = get_country_code(country)
+    return _get_dict(os.path.join(_BASE_PATH, country_code, 'states.json'))
+
+def get_cities(state, country):
+    if not _re_country_code.match(country):
+        country = get_country_code(country)
+    if not _re_state_code.match(state):
+        state = get_state_code(state, country)
+    return _get_dict(os.path.join(_BASE_PATH, country, state + '.json'))
+
+
+
+
+
+
