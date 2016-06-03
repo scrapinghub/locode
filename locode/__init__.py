@@ -14,7 +14,6 @@ def _get_dict(filename):
     except IOError:
         return None
 
-
 def _get_code(filename, text):
     data = _get_dict(filename)
     if data is None:
@@ -73,6 +72,13 @@ def get_city_code(text, state, country):
 def get_countries():
     return _get_dict(os.path.join(_BASE_PATH, 'countries.json'))
 
+
+_CODE_COUNTRY_MAP = {}
+def get_country_by_code(code):
+    if not _CODE_COUNTRY_MAP:
+        for country, cd in get_countries().iteritems():
+            _CODE_COUNTRY_MAP[cd] = country
+    return _CODE_COUNTRY_MAP[code]
 
 def get_states(country):
     country_code = get_country_code(country)
