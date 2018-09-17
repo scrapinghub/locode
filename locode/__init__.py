@@ -76,7 +76,7 @@ def get_countries():
 _CODE_COUNTRY_MAP = {}
 def get_country_by_code(code):
     if not _CODE_COUNTRY_MAP:
-        for country, cd in get_countries().iteritems():
+        for country, cd in get_countries().items():
             _CODE_COUNTRY_MAP[cd] = country
     return _CODE_COUNTRY_MAP[code]
 
