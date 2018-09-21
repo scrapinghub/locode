@@ -6,23 +6,26 @@ import os
 _BASE_PATH = os.path.dirname(__file__)
 NOT_FOUND = u'XX'
 
-def _get_dict(filename):
+def _get_dict(filename, lower=False):
     try:
         with open(filename) as f:
             data = json.load(f)
+            if lower:
+                data = dict((key.lower(), val) for key, val in data.items())
             return data
     except IOError:
         return None
 
 def _get_code(filename, text):
-    data = _get_dict(filename)
+    data = _get_dict(filename, True)
+    text = text.lower()
     if data is None:
         return NOT_FOUND
     value = data.get(text)
     if value:
         return value
     for char in ('/', ',', ' '):
-        key = filter(lambda x: x.startswith(text + char), data.keys())
+        key = list(filter(lambda x: x.startswith(text + char), data.keys()))
         if len(key) == 1:
             return data[key[0]]
     return NOT_FOUND
