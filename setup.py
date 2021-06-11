@@ -15,11 +15,15 @@ class bdist_egg(_bdist_egg):
 
 setup_kwargs = {
         'name': 'locode',
-        'version': '0.1',
+        'version': '0.1.1',
         'packages': find_packages(),
         'zip_safe': False,
         'cmdclass': {'bdist_egg': bdist_egg},
-        'package_dir': {'locode': 'locode'}
+        'package_dir': {'locode': 'locode'},
+        'license': 'BSD',
+        'description': 'Country and city codes from around the world.',
+        'long_description': open('README.md').read(),
+        'url': 'https://github.com/scrapinghub/locode',
         }
 
 

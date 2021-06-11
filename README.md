@@ -42,3 +42,10 @@ u'XX'
 >>> locode.get_country_code('-')
 u'XX'
 ```
+
+## Other methods
+
+
+- `locode.get_countries()` - returns a map with all countries and its codes.
+- `locode.get_states(country)` - returns a map with all states and its codes for the provided country.
+- `locode.get_cities(country, state)` - returns a map witll all cities and its codes for the provided country and state (only for few countries atm)
