@@ -2,7 +2,7 @@ import json
 import re
 import os
 
-__version__ = '0.1.1'
+__version__ = '0.1.1.1'
 
 _BASE_PATH = os.path.dirname(__file__)
 NOT_FOUND = u'XX'

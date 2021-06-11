@@ -15,7 +15,7 @@ class bdist_egg(_bdist_egg):
 
 setup_kwargs = {
         'name': 'locode',
-        'version': '0.1.1',
+        'version': '0.1.1.1',
         'packages': find_packages(),
         'zip_safe': False,
         'cmdclass': {'bdist_egg': bdist_egg},
