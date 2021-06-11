@@ -23,6 +23,7 @@ setup_kwargs = {
         'license': 'BSD',
         'description': 'Country and city codes from around the world.',
         'long_description': open('README.md').read(),
+        'long_description_content_type': 'text/markdown',
         'url': 'https://github.com/scrapinghub/locode',
         }
 
